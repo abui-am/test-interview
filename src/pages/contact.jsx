@@ -74,7 +74,7 @@ export default function Home() {
             onChange={(value) => {
               setIsNotBot(value);
             }}
-            sitekey="6Ldgz-scAAAAACoMsfKYkTTKUJs7xfpKRiTVC0HL"
+            sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITEKEY}
           />
           <Button type="submit" disabled={!isNotBot} style={{ marginTop: 20 }}>
             Send Message
