@@ -12,8 +12,8 @@ const menu = [
   {
     id: 'visionMision',
     icon: (props) => <PenTool {...props} />,
-    title: 'About Us',
-    url: '/aboutUs',
+    title: 'Vision Mission',
+    url: '/visionMission',
   },
   {
     id: 'contact',

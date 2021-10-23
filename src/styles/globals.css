@@ -45,6 +45,7 @@ a {
   --primary-text: #8984a1;
   --secondary-text: rgba(137, 132, 162, 0.8);
   --background-color: #ffffff;
+  --outline-color: #b2a7b8;
 }
 
 h1 {
@@ -94,6 +95,16 @@ small {
   font-weight: bold;
   font-size: 10px;
   line-height: 11px;
+}
+
+ol {
+  padding-left: 18px;
+}
+
+li {
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 @media screen and (max-width: 480px) {
