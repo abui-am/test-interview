@@ -107,7 +107,7 @@ li {
   line-height: 20px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   h1 {
     font-weight: bold;
     font-size: 40px;
