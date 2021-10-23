@@ -12,10 +12,10 @@ export default async (req, res) => {
     const createdAt = new Date().toISOString();
 
     try {
-      fs.writeFile(`messages/${id}.txt`, JSON.stringify({ fullName, email, message, createdAt }));
-      res.status(200).json({ message: 'berhasil' });
-
-      res.end();
+      fs.writeFile(`messages/${id}.txt`, JSON.stringify({ fullName, email, message, createdAt }), () => {
+        res.status(200).json({ message: 'berhasil' });
+        res.end();
+      });
     } catch (e) {
       res.status(500).json({ message: e });
       res.end();
