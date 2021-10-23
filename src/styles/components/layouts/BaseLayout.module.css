@@ -103,12 +103,14 @@
   margin-right: -52px;
   overflow: hidden;
   margin-left: 96px;
-  width: 204px;
+  display: block;
+  min-width: 204px;
   flex: 0 0px;
   background: white;
 }
 
 .navBarInner {
+  display: block;
   padding-left: 52px;
   padding-right: 52px;
   padding-top: 40px;
@@ -118,6 +120,7 @@
 
 .navBarItem {
   composes: flex-center from global;
+  cursor: pointer;
   flex-direction: column;
   box-shadow: 0px 12px 15px rgba(62, 46, 131, 0.2);
   border-radius: 20px;

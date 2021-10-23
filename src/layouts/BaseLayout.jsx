@@ -64,10 +64,19 @@ const AppHeader = () => {
 };
 
 const NavBarItem = ({ icon, title, isActive, url }) => {
+  const [isHover, setHover] = useState(false);
   return (
     <Link href={url}>
-      <div className={clsx(isActive && styles.navBarItemSelected, styles.navBarItem)}>
-        {icon?.({ fill: isActive ? 'white' : '#3e2e83' })}
+      <div
+        className={clsx((isActive || isHover) && styles.navBarItemSelected, styles.navBarItem)}
+        onMouseEnter={() => {
+          setHover(true);
+        }}
+        onMouseLeave={() => {
+          setHover(false);
+        }}
+      >
+        {icon?.({ fill: isActive || isHover ? 'white' : '#3e2e83' })}
         <small className={styles.iconLabel}>{title}</small>
       </div>
     </Link>

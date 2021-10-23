@@ -8,4 +8,10 @@
   padding: 11px 24px;
   color: white;
   border: 0;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background: var(--primary-text);
+  cursor: inherit;
 }
