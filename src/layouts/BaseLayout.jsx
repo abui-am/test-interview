@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '@/styles/components/layouts/BaseLayout.module.css';
 import Link from 'next/link';
 import menu from '@/constants/menu';
@@ -32,8 +32,22 @@ const BaseLayout = ({ children, imageUrl }) => {
 };
 
 const AppHeader = () => {
+  const [isTop, setIsTop] = useState(true);
+
+  useEffect(() => {
+    window.onscroll = function () {
+      console.log(window.pageYOffset);
+      if (window.pageYOffset <= 5) {
+        setIsTop(true);
+      }
+
+      if (window.pageYOffset > 5) {
+        setIsTop(false);
+      }
+    };
+  }, []);
   return (
-    <div className={styles.appHeader}>
+    <div className={clsx(styles.appHeader, !isTop && styles.headerSticky)}>
       <div className="flex-center">
         <img src="/svg/logo.svg" style={{ marginRight: 12 }} />
         <h4>Logo here</h4>
