@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>About Us</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BaseLayout imageUrl="/images/about-us.png">

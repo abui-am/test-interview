@@ -5,12 +5,12 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Vision Mission</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BaseLayout imageUrl="/images/vision-mission.png">
         <h1>Vision Mission</h1>
-        <h6>Our vision</h6>
+        <h6>Our Vision</h6>
         <p>Becoming number one preferred digital platform of international trades for Indonesia and the world.</p>
         <h6>Our Mission</h6>
         <p>

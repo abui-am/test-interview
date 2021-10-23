@@ -8,7 +8,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import toast from 'react-hot-toast';
 
 export default function Home() {
-  const [formState, setFormState] = useState({});
+  const [formState, setFormState] = useState({ fullName: '', email: '', message: '' });
   const [isNotBot, setIsNotBot] = useState(false);
   const setField = (name, value) => {
     setFormState((old) => ({ ...old, [name]: value }));
@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Contact</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BaseLayout imageUrl="/images/contact.png">
@@ -27,8 +27,6 @@ export default function Home() {
         <p>Sona Topas Tower, Jl. Jend. Sudirman No.Kav 26, RT.4/RW.2, Karet, Jakarta Selatan, 12920.</p>
         <h6>Email</h6>
         <p>info@62trade.com</p>
-        <h6>Values</h6>
-
         <form
           onSubmit={async (e) => {
             e.preventDefault();

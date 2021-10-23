@@ -42,7 +42,6 @@ const AppHeader = () => {
 
   useEffect(() => {
     window.onscroll = function () {
-      console.log(window.pageYOffset);
       if (window.pageYOffset <= 5) {
         setIsTop(true);
       }
@@ -54,10 +53,12 @@ const AppHeader = () => {
   }, []);
   return (
     <div className={clsx(styles.appHeader, !isTop && styles.headerSticky)}>
-      <div className="flex-center">
-        <img src="/svg/logo.svg" className={styles.logo} />
-        <h4>Logo here</h4>
-      </div>
+      <Link href="/">
+        <div className="flex-center" style={{ cursor: 'pointer' }}>
+          <img src="/svg/logo.svg" className={styles.logo} />
+          <h4>Logo here</h4>
+        </div>
+      </Link>
       <span className={styles.subtitle}>Resourceful Indonesia</span>
     </div>
   );
