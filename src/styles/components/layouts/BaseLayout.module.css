@@ -1,0 +1,80 @@
+.container {
+  position: relative;
+  padding-left: 40px;
+  padding-right: 52px;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.rectangleOrnament {
+  position: absolute;
+  height: 700px;
+  left: -59px;
+  top: 0px;
+  z-index: -1;
+}
+
+/* App Header  */
+
+.appHeader {
+  composes: flex-center from global;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  margin-bottom: 52px;
+}
+
+/* navbar */
+
+.navBar {
+  background: linear-gradient(90deg, rgba(119, 111, 196, 0.1) 17.11%, rgba(119, 111, 196, 0) 93.66%);
+  border-radius: 20px;
+  margin-right: -52px;
+  padding-left: 52px;
+  padding-right: 52px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  margin-left: 96px;
+  width: 204px;
+  flex: 0 0px;
+}
+
+.navBarItem {
+  composes: flex-center from global;
+  flex-direction: column;
+  box-shadow: 0px 12px 15px rgba(62, 46, 131, 0.2);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  background: var(--background-color);
+  width: 100px;
+  height: 100px;
+}
+
+.iconLabel {
+  margin-top: 12px;
+}
+
+.navBarItemSelected {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Floating image  */
+
+.floatingImage {
+  composes: flex-center from global;
+  width: 362px;
+  padding-top: 48px;
+  padding-bottom: 60px;
+  margin-right: 40px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0px 50px 30px -20px rgba(43, 48, 69, 0.2);
+}
+
+.image {
+  width: 350px;
+  height: 350px;
+}
