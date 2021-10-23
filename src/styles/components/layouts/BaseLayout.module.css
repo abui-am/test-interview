@@ -1,3 +1,6 @@
+.root {
+  composes: flex-center from global;
+}
 .container {
   position: relative;
   padding-left: 40px;
@@ -5,7 +8,14 @@
   max-width: 1200px;
   min-height: 100vh;
   display: flex;
+  width: 100%;
   flex-direction: column;
+}
+
+.innerContainer {
+  composes: flex-center from global;
+  align-items: start;
+  flex: 1;
 }
 
 .rectangleOrnament {
@@ -16,6 +26,26 @@
   z-index: -1;
 }
 
+@media screen and (max-width: 480px) {
+  .root {
+    display: block;
+    margin-bottom: 120px;
+  }
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .innerContainer {
+    flex-direction: column-reverse;
+  }
+  .rectangleOrnament {
+    position: absolute;
+    width: 201px;
+    height: 313px;
+    left: -59px;
+    top: 0px;
+  }
+}
 /* App Header  */
 
 .appHeader {
@@ -33,24 +63,57 @@
   transition: all 0.3s;
 }
 
+.subtitle {
+  composes: color-primary from global;
+}
+
+.logo {
+  width: 25px;
+  height: 30px;
+  margin-right: 12px;
+}
+
 .headerSticky {
   background: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
+@media screen and (max-width: 480px) {
+  .appHeader {
+    margin-left: -20px;
+    margin-right: -28px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  .logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  .subtitle {
+    font-weight: bold;
+  }
+}
+
 /* navbar */
 
 .navBar {
-  background: linear-gradient(90deg, rgba(119, 111, 196, 0.1) 17.11%, rgba(119, 111, 196, 0) 93.66%);
   border-radius: 20px;
   margin-right: -52px;
+  overflow: hidden;
+  margin-left: 96px;
+  width: 204px;
+  flex: 0 0px;
+  background: white;
+}
+
+.navBarInner {
   padding-left: 52px;
   padding-right: 52px;
   padding-top: 40px;
   padding-bottom: 50px;
-  margin-left: 96px;
-  width: 204px;
-  flex: 0 0px;
+  background: linear-gradient(90deg, rgba(119, 111, 196, 0.1) 17.11%, rgba(119, 111, 196, 0) 93.66%);
 }
 
 .navBarItem {
@@ -66,11 +129,39 @@
 
 .iconLabel {
   margin-top: 12px;
+  text-align: center;
 }
 
 .navBarItemSelected {
   background: var(--primary-color);
   color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .navBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0px;
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .navBarInner {
+    composes: flex-center from global;
+    padding: 20px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(119, 111, 196, 0.1) 19.89%, rgba(119, 111, 196, 0) 99.15%), #ffffff;
+  }
+
+  .navBarItem {
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 80px;
+    height: 80px;
+  }
 }
 
 /* Floating image  */
@@ -79,6 +170,8 @@
   composes: flex-center from global;
   width: 362px;
   padding-top: 48px;
+  padding-right: 6px;
+  padding-left: 6px;
   padding-bottom: 60px;
   margin-right: 40px;
   background: #ffffff;
@@ -89,4 +182,29 @@
 .image {
   width: 350px;
   height: 350px;
+}
+
+@media screen and (max-width: 860px) {
+  .floatingImage {
+    margin-top: 12px;
+    width: 216px;
+  }
+
+  .image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .floatingImage {
+    width: 100%;
+    margin-top: 12px;
+    margin-right: 0px;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
 }

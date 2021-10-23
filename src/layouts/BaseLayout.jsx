@@ -8,22 +8,28 @@ const BaseLayout = ({ children, imageUrl }) => {
   const { pathname } = useRouter();
 
   return (
-    <div className="flex-center">
+    <div className={styles.root}>
       <div className={styles.container}>
         <AppHeader />
         <img className={styles.rectangleOrnament} src="/svg/ornament.svg" />
-        <div className="flex-center" style={{ alignItems: 'start', flex: 1 }}>
+        <div className={styles.innerContainer}>
           <FloatingImage imageUrl={imageUrl} />
           <main className="flex-1" style={{ paddingTop: 16 }}>
             {children}
           </main>
+
           <nav className={styles.navBar}>
-            {menu.map(({ icon, title, id, url }) => {
-              return <NavBarItem key={id} url={url} isActive={url === pathname} icon={icon} title={title} />;
-            })}
+            <div className={styles.navBarInner}>
+              {menu.map(({ icon, title, id, url }) => {
+                return <NavBarItem key={id} url={url} isActive={url === pathname} icon={icon} title={title} />;
+              })}
+            </div>
           </nav>
         </div>
-        <footer style={{ color: 'var(--secondary-text)', padding: 32, fontSize: 12 }} className="flex-center">
+        <footer
+          style={{ color: 'var(--secondary-text)', padding: 32, marginTop: 8, fontSize: 12 }}
+          className="flex-center"
+        >
           Copyright 2021 62Trade.com PT. Enam Dua Niaga
         </footer>
       </div>
@@ -49,10 +55,10 @@ const AppHeader = () => {
   return (
     <div className={clsx(styles.appHeader, !isTop && styles.headerSticky)}>
       <div className="flex-center">
-        <img src="/svg/logo.svg" style={{ marginRight: 12 }} />
+        <img src="/svg/logo.svg" className={styles.logo} />
         <h4>Logo here</h4>
       </div>
-      <span className="color-primary">Resourceful Indonesia</span>
+      <span className={styles.subtitle}>Resourceful Indonesia</span>
     </div>
   );
 };
